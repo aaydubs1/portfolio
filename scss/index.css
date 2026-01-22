@@ -1105,6 +1105,7 @@ body {
 .Header {
   position: fixed;
   width: 100%;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1181,39 +1182,45 @@ body {
   background-color: black;
 }
 
+.item1 {
+  position: relative;
+}
+
 .Portfolio-div {
-  position: fixed;
   color: white;
-  padding: 0 0 0 1rem;
   bottom: 0;
   width: 100%;
+  position: absolute;
 }
 
 .Portfolio-title {
-  font-size: 12rem;
+  font-size: 15rem;
   font-weight: 800;
   line-height: 0.5;
 }
 
 @media (max-width: 900px) {
   .Portfolio-title {
-    font-size: 10rem;
+    font-size: 12rem;
   }
 }
 @media (max-width: 700px) {
   .Portfolio-title {
-    font-size: 8rem;
+    font-size: 10rem;
   }
 }
 @media (max-width: 560px) {
   .Portfolio-title {
-    font-size: 6rem;
+    font-size: 8rem;
   }
 }
 @media (max-width: 420px) {
   .Portfolio-title {
-    font-size: 8rem;
+    font-size: 6rem;
     line-height: 0.5;
+  }
+  .Header-nav ul {
+    gap: 1rem;
   }
 }
 .Portfolio-title--color {
