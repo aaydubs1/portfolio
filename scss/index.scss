@@ -102,7 +102,36 @@ font-family: "Space Grotesk", sans-serif;
   -moz-osx-font-smoothing : grayscale;
     height: 100%;
   overflow: hidden;
+  background-color: rgb(217, 2, 171);
 }
+
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat;
+  animation: bg-animation 0.2s infinite;
+  opacity: 0.9;
+  pointer-events: none; /* muy importante */
+  z-index: 0;
+}
+@keyframes bg-animation {
+  0%   { transform: translate(0,0) }
+  10%  { transform: translate(-5%,-5%) }
+  20%  { transform: translate(-10%,5%) }
+  30%  { transform: translate(5%,-10%) }
+  40%  { transform: translate(-5%,15%) }
+  50%  { transform: translate(-10%,5%) }
+  60%  { transform: translate(15%,0) }
+  70%  { transform: translate(0,10%) }
+  80%  { transform: translate(-15%,0) }
+  90%  { transform: translate(10%,5%) }
+  100% { transform: translate(5%,0) }
+}
+
 
 // Estilos personalizados
 
@@ -156,14 +185,15 @@ font-family: "Space Grotesk", sans-serif;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
+  z-index: -3;
 }
 
 .Header-link:hover::before {
   opacity: 1;
 }
 .Header-link:hover {
-    color: rgb(255, 10, 137);
   font-size: 2rem;
+ 
 
 }
 
@@ -171,7 +201,7 @@ font-family: "Space Grotesk", sans-serif;
 .horizontal-scroll-container {
   display: flex;
   height: 100vh;
-  width: 100vw;
+  width: 100VW;
   overflow-x: scroll;
   overflow-y: hidden;
   scroll-snap-type: none; /* Desactivado temporalmente */
@@ -179,34 +209,41 @@ font-family: "Space Grotesk", sans-serif;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-
 .horizontal-scroll-container::-webkit-scrollbar {
   display: none;
 }
-
-.portfolio-item {
+.horizontal-scroll-container > div {
   flex: 0 0 100vw;
   height: 100vh;
+  display: flex;
+}
+
+
+
+.item1{
   scroll-snap-align: start;
   display: flex;
+  
   justify-content: center;
   align-items: center;
   font-size: 3rem;
   color: white;
   user-select: none;
-  background-color: black;
+  position: relative;
+}
+.item2{
+
 }
 
-.item1{
-position: relative;
- 
-}
+
 //Portfolio title
 .Portfolio-div {
   color: white;
     bottom: 0;
-    width: 100%;
-    position: absolute;
+    left: 0;
+ 
+   position: absolute;
+
 }
 .Portfolio-title {
     font-size: 15rem;
@@ -238,5 +275,15 @@ position: relative;
 }}
 
 .Portfolio-title--color{
-    color: rgb(255, 10, 137);
+    color: rgb(255, 0, 64);
+}
+
+.Info-div{
+  font-size: .6rem;
+  display: flex;
+
+width: 100%;
+justify-content: space-between;
+margin: 1rem;
+
 }
