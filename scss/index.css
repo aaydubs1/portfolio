@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;
@@ -1244,43 +1245,249 @@ body::before {
 }
 
 .Portfolio-title {
-  font-size: 15rem;
+  font-size: 24rem;
   font-weight: 800;
   line-height: 0.5;
+  position: relative;
+}
+
+.Portfolio-title--color {
+  color: rgba(102, 126, 234, 0.45);
+  z-index: -1;
+}
+
+.Info-div {
+  font-size: 0.9rem;
+  margin: 0 0 2.5rem 1.5rem;
+}
+
+.marquee-container {
+  overflow: hidden;
+  width: 50%;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.marquee-track {
+  display: flex;
+  width: -moz-max-content;
+  width: max-content;
+  animation: marquee 15s linear infinite;
+}
+
+.Info-description {
+  white-space: nowrap;
+  line-height: 1.5;
+  font-weight: 500;
+  margin: 0 0.2rem 0 0;
+  letter-spacing: 0.2rem;
+}
+
+/* Animación infinita */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.Portfolio-by--text {
+  font-weight: 700;
+  color: rgb(102, 126, 234);
 }
 
 @media (max-width: 900px) {
   .Portfolio-title {
-    font-size: 12rem;
+    font-size: 20rem;
+  }
+  .marquee-container {
+    width: 40%;
+  }
+  .Info-div {
+    font-size: 0.9rem;
+    margin: 0 0 2rem 1.5rem;
   }
 }
 @media (max-width: 700px) {
   .Portfolio-title {
-    font-size: 10rem;
+    font-size: 18rem;
+  }
+  .marquee-container {
+    width: 35%;
   }
 }
-@media (max-width: 560px) {
+@media (max-width: 614px) {
   .Portfolio-title {
-    font-size: 8rem;
+    font-size: 16rem;
+  }
+  .marquee-container {
+    width: 32%;
+  }
+}
+@media (max-width: 516px) {
+  .Portfolio-title {
+    font-size: 14rem;
+  }
+  .marquee-container {
+    width: 28%;
   }
 }
 @media (max-width: 420px) {
   .Portfolio-title {
-    font-size: 6rem;
+    font-size: 12rem;
     line-height: 0.5;
   }
   .Header-nav ul {
     gap: 1rem;
   }
+  .marquee-container {
+    width: 23%;
+  }
 }
-.Portfolio-title--color {
-  color: rgb(255, 0, 64);
+.Presentacion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 2rem;
+  gap: 1.5rem;
 }
 
-.Info-div {
-  font-size: 0.6rem;
+.Presentacion-name {
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.829);
+}
+
+.Presentacion-profession {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.btn {
+  display: inline-flex;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 8px 20px;
+  font-size: 14px;
+  background-color: rgb(102, 126, 234);
+  border-radius: 2px;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  transition: all 0.2s ease-in;
+  background-position: 50%;
+  outline: none !important;
+}
+.btn.btn-circle {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  padding: 0 !important;
+  font-size: 18px;
+}
+
+.btn-multi input {
+  display: none;
+}
+.btn-multi input:not(:checked) ~ label {
+  transform: rotate(0);
+}
+.btn-multi input:not(:checked) ~ label .btn {
+  border-radius: 0;
+  height: 30px;
+  width: 30px;
+  box-shadow: none;
+}
+.btn-multi input:not(:checked) ~ label .btn:first-child {
+  border-top-left-radius: 100%;
+  transform: translate(25px, 25px);
+}
+.btn-multi input:not(:checked) ~ label .btn:nth-child(2) {
+  border-top-right-radius: 100%;
+  transform: translate(55px, 25px);
+}
+.btn-multi input:not(:checked) ~ label .btn:nth-child(3) {
+  border-bottom-left-radius: 100%;
+  transform: translate(25px, 55px);
+}
+.btn-multi input:not(:checked) ~ label .btn:nth-child(4) {
+  border-bottom-right-radius: 100%;
+  transform: translate(55px, 55px);
+}
+.btn-multi input:not(:checked) ~ label .btn .icon {
+  opacity: 0;
+}
+.btn-multi input:not(:checked) ~ label > .icon {
+  opacity: 1;
+  cursor: pointer;
+}
+.btn-multi label {
+  position: relative;
+  height: 110px;
+  width: 110px;
+  display: block;
+  transform: rotate(45deg);
+  transition: all 0.2s ease-in;
+  cursor: default;
+  border-radius: 30px;
+}
+.btn-multi label .btn {
+  position: absolute;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.btn-multi label .btn:nth-child(2) {
+  transform: translate(60px, 0);
+}
+.btn-multi label .btn:nth-child(3) {
+  transform: translate(0, 60px);
+}
+.btn-multi label .btn:nth-child(4) {
+  transform: translate(60px, 60px);
+}
+.btn-multi label .btn .icon {
+  opacity: 1;
+  transition: all 0.15s ease-in-out;
+  transform: rotate(-45deg);
+}
+.btn-multi label > .icon {
+  color: white;
+  position: absolute;
+  border-radius: 50%;
   display: flex;
-  width: 100%;
-  justify-content: space-between;
-  margin: 1rem;
+  font-size: 18px;
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 100px;
+  top: 25px;
+  left: 25px;
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+}
+.btn-multi label .icon {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.svg-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.svg-icon-linkedin {
+  width: 50px;
+  border-radius: 2rem;
+}
+
+.svg-icon-download {
+  width: 40px;
 }/*# sourceMappingURL=index.css.map */
