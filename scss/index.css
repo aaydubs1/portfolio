@@ -1376,7 +1376,7 @@ body::before {
   white-space: nowrap;
   padding: 8px 20px;
   font-size: 14px;
-  background-color: rgb(102, 126, 234);
+  background-color: rgba(255, 0, 225, 0.605);
   border-radius: 2px;
   color: white;
   text-transform: uppercase;
@@ -1461,7 +1461,7 @@ body::before {
   position: absolute;
   border-radius: 50%;
   display: flex;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
   align-items: center;
   justify-content: center;
@@ -1488,6 +1488,67 @@ body::before {
   border-radius: 2rem;
 }
 
-.svg-icon-download {
-  width: 40px;
+.icon-cv {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.Cards-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 25rem;
+}
+
+/* GLASS BOX */
+.glassBox {
+  display: flex;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+/* IMAGEN */
+.glassBox__imgBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s ease;
+}
+
+.glassBox__imgBox img,
+.glassBox__imgBox svg {
+  width: 100%;
+  height: auto;
+  transition: all 0.4s ease;
+  max-width: 6rem;
+}
+
+/* TITULO */
+.glassBox__title {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+/* HOVER */
+.glassBox:hover .glassBox__imgBox {
+  transform: translateY(-20px);
+}
+
+.glassBox:hover .glassBox__imgBox img,
+.glassBox:hover .glassBox__imgBox svg {
+  transform: translate(-10px, -20px) rotate(-15deg) scale(1.2);
+}
+
+.glassBox:hover .glassBox__content {
+  opacity: 1;
+}
+
+.Tecnologías-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.829);
 }/*# sourceMappingURL=index.css.map */
