@@ -1138,7 +1138,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
   overflow: hidden;
-  background-color: rgb(217, 2, 171);
+  background: linear-gradient(to right, #fdfbfb, #ebedee);
 }
 
 body::before {
@@ -1218,14 +1218,14 @@ body::before {
   align-items: center;
   gap: 2rem;
   margin: auto;
-  padding: 1rem 0;
 }
 
 .Header-link {
   position: relative;
-  padding: 2rem 0;
+  padding: 1rem 0;
   white-space: nowrap;
   transition: color 0.3s ease, font-size 0.6s ease;
+  color: #333;
   overflow: visible;
   /* CLAVE */
 }
@@ -1251,6 +1251,7 @@ body::before {
 
 .Header-link:hover {
   font-size: 2rem;
+  color: rgba(102, 126, 234, 0.45);
 }
 
 .horizontal-scroll-container {
@@ -1312,6 +1313,7 @@ body::before {
 .Info-div {
   font-size: 0.9rem;
   margin: 0 0 2.5rem 1.5rem;
+  color: #333;
 }
 
 .marquee-container {
@@ -1398,59 +1400,61 @@ body::before {
     width: 23%;
   }
 }
-.Presentacion {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 2rem;
-  gap: 1.5rem;
-}
-
 .Presentacion-name {
   font-size: 3rem;
   font-weight: 800;
-  color: rgba(255, 255, 255, 0.829);
+  color: #333;
 }
 
 .Presentacion-profession {
   font-size: 1.5rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.74);
+  color: #6c63ff;
 }
 
-.btn {
-  display: inline-flex;
-  font-family: "Roboto", sans-serif;
-  text-decoration: none;
-  justify-content: center;
+/* Contenedor del menú */
+/* Contenedor horizontal */
+/* Contenedor horizontal */
+.Presentacion-contacto {
+  display: flex;
   align-items: center;
-  text-align: center;
-  cursor: pointer;
-  white-space: nowrap;
-  padding: 8px 20px;
-  background-color: transparent;
-  border-radius: 2px;
-  color: white;
-  text-transform: uppercase;
-  border: none;
-  transition: all 0.2s ease-in;
-  background-position: 50%;
-  outline: none !important;
-}
-.btn.btn-circle {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  padding: 0 !important;
+  gap: 1rem;
+  transition: gap 0.3s ease;
+  /* suaviza el desplazamiento */
 }
 
-.icon-conecta {
-  transition: color 0.3s ease, font-size 0.6s ease;
+/* Bloque de contacto */
+.btn-multi {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Ocultamos el input */
+.btn-multi input {
+  display: none;
+}
+
+/* Botón principal */
+.trigger-btn {
   position: relative;
-  font-size: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.829);
+  padding: 1rem 1.4rem;
+  border-radius: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.3s ease;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.15);
+  color: #333;
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;
 }
 
-.icon-conecta::before {
+/* Glow dinámico */
+.trigger-btn::before {
   content: "";
   position: absolute;
   width: 100px;
@@ -1462,125 +1466,101 @@ body::before {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-  z-index: -3;
+  z-index: -1;
 }
 
-.icon-conecta:hover::before {
-  opacity: 1;
-}
-
-.icon-conecta:hover {
-  font-size: 1.3rem;
-}
-
-.icon-x {
-  font-size: 2rem;
-}
-
-.btn-multi input {
-  display: none;
-}
-.btn-multi input:not(:checked) ~ label {
-  transform: rotate(0);
-}
-.btn-multi input:not(:checked) ~ label .btn {
-  border-radius: 0;
-  height: 30px;
-  width: 30px;
-  box-shadow: none;
-}
-.btn-multi input:not(:checked) ~ label .btn:first-child {
-  border-top-left-radius: 100%;
-  transform: translate(25px, 25px);
-}
-.btn-multi input:not(:checked) ~ label .btn:nth-child(2) {
-  border-top-right-radius: 100%;
-  transform: translate(55px, 25px);
-}
-.btn-multi input:not(:checked) ~ label .btn:nth-child(3) {
-  border-bottom-left-radius: 100%;
-  transform: translate(25px, 55px);
-}
-.btn-multi input:not(:checked) ~ label .btn:nth-child(4) {
-  border-bottom-right-radius: 100%;
-  transform: translate(55px, 55px);
-}
-.btn-multi input:not(:checked) ~ label .btn .icon {
-  opacity: 0;
-}
-.btn-multi input:not(:checked) ~ label > .icon {
-  opacity: 1;
-  cursor: pointer;
-}
-.btn-multi label {
-  position: relative;
-  height: 110px;
-  width: 110px;
-  display: block;
-  transform: rotate(45deg);
-  transition: all 0.2s ease-in;
-  cursor: default;
-  border-radius: 30px;
-}
-.btn-multi label .btn {
-  position: absolute;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-.btn-multi label .btn:nth-child(2) {
-  transform: translate(60px, 0);
-}
-.btn-multi label .btn:nth-child(3) {
-  transform: translate(0, 60px);
-}
-.btn-multi label .btn:nth-child(4) {
-  transform: translate(60px, 60px);
-}
-.btn-multi label .btn .icon {
-  opacity: 1;
-  transition: all 0.15s ease-in-out;
-  transform: rotate(-45deg);
-}
-.btn-multi label > .icon {
+.trigger-btn:hover {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15);
+  background-color: rgba(102, 126, 234, 0.45);
   color: white;
-  position: absolute;
+}
+
+.trigger-btn:hover::before {
+  opacity: 1;
+}
+
+.trigger-btn:active {
+  transform: translateY(6px);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.15);
+}
+
+/* Grupo de botones: siempre en flujo, pero colapsado */
+.btn-group {
+  display: inline-flex;
+  gap: 10px;
+  margin-left: 10px;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateX(-10px);
+  transition: max-width 0.4s ease, opacity 0.3s ease, transform 0.4s ease;
+}
+
+/* Al abrir: se expande y empuja "Más sobre mí" */
+.btn-multi input:checked ~ .btn-group {
+  max-width: 400px;
+  /* ajusta según cuántos botones haya */
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Botones individuales: animación uno a uno */
+.btn-group .btn {
+  background: rgba(255, 255, 255, 0.15);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
   border-radius: 50%;
+  height: 50px;
+  width: 50px;
   display: flex;
-  font-weight: 500;
   align-items: center;
   justify-content: center;
-  height: 60px;
-  width: 100px;
-  top: 25px;
-  left: 25px;
-  opacity: 0;
-  transition: all 0.25s ease-in-out;
-}
-.btn-multi label .icon {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-}
-
-.svg-icon {
-  width: 50px;
-  height: 50px;
-}
-
-.svg-icon-linkedin {
-  width: 50px;
-  border-radius: 2rem;
-}
-
-.icon-cv {
-  font-size: 1.7rem;
   font-weight: 600;
+  color: #333;
+  opacity: 0;
+  transform: translateY(8px) scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.Cards-container {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  max-width: 25rem;
+/* Stagger */
+.btn-multi input:checked ~ .btn-group .btn:nth-child(1) {
+  transition-delay: 0.05s;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.btn-multi input:checked ~ .btn-group .btn:nth-child(2) {
+  transition-delay: 0.15s;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.btn-multi input:checked ~ .btn-group .btn:nth-child(3) {
+  transition-delay: 0.25s;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.btn-multi input:checked ~ .btn-group .btn:nth-child(4) {
+  transition-delay: 0.35s;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Hover para los botones desplegados */
+.btn-group .btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  background-color: rgba(102, 126, 234, 0.45);
+  color: white;
+  box-shadow: 0 4px 10px rgba(102, 126, 234, 0.35);
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Efecto "pressed" */
+.btn-group .btn:active {
+  transform: translateY(0px) scale(0.95);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.15);
 }
 
 /* GLASS BOX */
@@ -1609,9 +1589,9 @@ body::before {
 
 /* TITULO */
 .glassBox__title {
-  color: #fff;
+  color: #6c63ff;
   font-size: 1.25rem;
-  font-weight: 400;
+  font-weight: 500;
   text-align: center;
   transition: all 0.4s ease;
 }
@@ -1633,7 +1613,7 @@ body::before {
 .Tecnologías-title {
   font-size: 2rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.829);
+  color: #333;
 }
 
 /* Estilos base: ya definidos por ti */
@@ -1645,25 +1625,11 @@ body::before {
   gap: 1.5rem;
 }
 
-.Presentacion-name {
-  font-size: 3rem;
-  font-weight: 800;
-  color: rgba(255, 255, 255, 0.829);
-}
-
-.Presentacion-profession {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.74);
-}
-
 .Cards-container {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
   max-width: 25rem;
-  justify-content: center;
-  background-color: rgba(102, 126, 234, 0.45);
 }
 
 /* Media queries para responsividad */
@@ -1726,6 +1692,64 @@ body::before {
     max-width: 5rem;
   }
 }
+.Presentacion-contacto {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: gap 0.3s ease;
+}
+
+.mas-sobre-mi {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.829);
+  padding: 1rem 1.4rem;
+  border-radius: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* Glow dinámico */
+.mas-sobre-mi::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: calc(var(--mouse-x) - 50px);
+  top: calc(var(--mouse-y) - 50px);
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.45), rgba(118, 75, 162, 0.25) 40%, transparent 70%);
+  filter: blur(18px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+/* Hover: se hunde + aparece glow */
+.mas-sobre-mi:hover {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15);
+  background-color: rgba(102, 126, 234, 0.45);
+  color: white;
+}
+
+.mas-sobre-mi:hover::before {
+  opacity: 1;
+}
+
+/* Active: hundido del todo */
+.mas-sobre-mi:active {
+  transform: translateY(6px);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.15);
+}
+
+.mas-sobre-mi-arrow {
+  width: 1rem;
+}
+
 .Cards-proyecto a {
   display: contents;
 }
@@ -1837,13 +1861,15 @@ body::before {
     gap: 1rem;
   }
   .card {
-    min-width: 28%; /* porque 4 cards = 200% */
+    min-width: 28%;
+    /* porque 4 cards = 200% */
   }
   .Cards-proyecto {
     width: 230vw;
   }
   .card:hover {
-    flex: 6; /* antes era 3 */
+    flex: 6;
+    /* antes era 3 */
   }
   .card:hover ~ .card {
     flex: 0.5;
@@ -1865,4 +1891,65 @@ body::before {
     opacity: 1;
     pointer-events: auto;
   }
+}
+/* SOBRE MI */
+.perfil-con-carrousel {
+  padding: 4rem 2rem;
+  background: linear-gradient(to right, #fdfbfb, #ebedee);
+}
+
+.perfil-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.perfil-carrusel {
+  flex: 1 1 400px;
+  max-width: 450px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.perfil-carrusel img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+}
+
+.perfil-texto {
+  flex: 1 1 400px;
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+}
+
+.perfil-nombre {
+  font-family: "Satisfy", cursive;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #6c63ff;
+}
+
+.perfil-roles {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.perfil-descripcion {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.perfil-contacto {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #6c63ff;
 }/*# sourceMappingURL=index.css.map */
