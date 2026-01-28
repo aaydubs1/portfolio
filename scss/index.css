@@ -1137,8 +1137,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
-  overflow: hidden;
   background: linear-gradient(to right, #fdfbfb, #ebedee);
+  overflow-x: hidden;
 }
 
 body::before {
@@ -1204,12 +1204,11 @@ body::before {
 }
 
 .Header {
-  position: fixed;
+  position: fixed; /* opcional */
+  top: 0;
+  left: 0;
   width: 100%;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  z-index: 1000;
 }
 
 .Header-nav ul {
@@ -1256,26 +1255,13 @@ body::before {
 
 .horizontal-scroll-container {
   display: flex;
-  height: 100vh;
-  width: 100VW;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  scroll-snap-type: none;
-  /* Desactivado temporalmente */
-  scroll-behavior: auto;
-  /* CAMBIADO de smooth a auto */
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.horizontal-scroll-container::-webkit-scrollbar {
-  display: none;
+  flex-wrap: nowrap;
+  height: 100vh; /* 👈 CLAVE */
+  width: 100%;
 }
 
 .horizontal-scroll-container > div {
   flex: 0 0 100vw;
-  height: 100vh;
-  display: flex;
 }
 
 .item1 {
@@ -1400,6 +1386,22 @@ body::before {
     width: 23%;
   }
 }
+.item2 {
+  background-color: #9994f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Presentacion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 2rem;
+  gap: 1.5rem;
+  background-color: aquamarine;
+}
+
 .Presentacion-name {
   font-size: 3rem;
   font-weight: 800;
@@ -1617,14 +1619,6 @@ body::before {
 }
 
 /* Estilos base: ya definidos por ti */
-.Presentacion {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 2rem;
-  gap: 1.5rem;
-}
-
 .Cards-container {
   display: flex;
   gap: 20px;
@@ -1891,4 +1885,14 @@ body::before {
     opacity: 1;
     pointer-events: auto;
   }
+}
+.animate {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate.is-visible {
+  opacity: 1;
+  transform: translateX(0);
 }/*# sourceMappingURL=index.css.map */
