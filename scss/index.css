@@ -1387,7 +1387,6 @@ body::before {
   }
 }
 .item2 {
-  background-color: #9994f3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1397,9 +1396,9 @@ body::before {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 0 2rem;
   gap: 1.5rem;
-  background-color: aquamarine;
 }
 
 .Presentacion-name {
@@ -1624,6 +1623,7 @@ body::before {
   gap: 20px;
   flex-wrap: wrap;
   max-width: 25rem;
+  justify-content: center;
 }
 
 /* Media queries para responsividad */
@@ -1744,6 +1744,12 @@ body::before {
   width: 1rem;
 }
 
+.item3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .Cards-proyecto a {
   display: contents;
 }
@@ -1754,7 +1760,6 @@ body::before {
   justify-content: center;
   align-items: center;
   width: 100%;
-  color: rgba(255, 255, 255, 0.829);
   gap: 2rem;
 }
 

@@ -481,9 +481,10 @@ z-index: 1000;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 0 2rem;
   gap: 1.5rem;
-  background-color: aquamarine;
+
 
 }
 
@@ -491,6 +492,7 @@ z-index: 1000;
   font-size: 3rem;
   font-weight: 800;
   color: #333;
+
 }
 
 .Presentacion-profession {
@@ -512,6 +514,7 @@ z-index: 1000;
   gap: 1rem;
   transition: gap .3s ease;
   /* suaviza el desplazamiento */
+
 }
 
 /* Bloque de contacto */
@@ -723,6 +726,7 @@ z-index: 1000;
   flex-wrap: wrap;
   max-width: 25rem;
 
+justify-content: center;
 }
 
 /* Media queries para responsividad */
@@ -870,6 +874,9 @@ z-index: 1000;
 //cards proyectos
 .item3{
 
+display: flex;
+justify-content: center;
+align-items: center;
 }
 .Cards-proyecto a {
   display: contents;
@@ -881,7 +888,7 @@ z-index: 1000;
   justify-content: center;
   align-items: center;
   width: 100%;
-  
+
   gap: 2rem;
 }
 
